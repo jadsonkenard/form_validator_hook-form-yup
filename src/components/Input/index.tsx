@@ -9,7 +9,7 @@ export const Input = ({ icon, ...props }: IInput) => {
   return (
     <View style={styles.container}>
       <TextInput style={styles.input} {...props}/>
-      <Ionicons name={icon} size={18} color={'#0f172a'} style={styles.icon}/>
+      <Ionicons name={icon} size={18} color={'#15803d'} style={styles.icon}/>
     </View>
   );
 };

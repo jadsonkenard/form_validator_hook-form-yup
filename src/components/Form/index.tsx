@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Button, View } from "react-native";
+import { View } from "react-native";
+import { Button } from "../Button";
 import { InputControl } from "../InputControl";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -44,6 +45,8 @@ export default function FormRegister() {
   return (
     <View>
       <InputControl
+        autoCorrect={false}
+        autoCapitalize="none"
         icon="person"
         placeholder="Nome completo"
         name="name"
@@ -51,13 +54,18 @@ export default function FormRegister() {
         error={errors.name}
       />
       <InputControl
+        autoCorrect={false}
+        autoCapitalize="none"
         icon="mail"
         placeholder="Email"
         name="email"
         control={control}
         error={errors.email}
+        keyboardType="email-address"
       />
       <InputControl
+        autoCorrect={false}
+        autoCapitalize="none"
         icon="lock-closed"
         placeholder="Senha"
         name="password"
@@ -65,13 +73,15 @@ export default function FormRegister() {
         error={errors.password}
       />
       <InputControl
+        autoCorrect={false}
+        autoCapitalize="none"
         icon="lock-closed"
         placeholder="Confirmação de senha"
         name="confirm_password"
         control={control}
         error={errors.confirm_password}
       />
-      <Button title="entrar" onPress={handleSubmit(handleForm)} />
+      <Button title="Cadastrar" onPress={handleSubmit(handleForm)}/>
       <StatusBar style="auto" />
     </View>
   );

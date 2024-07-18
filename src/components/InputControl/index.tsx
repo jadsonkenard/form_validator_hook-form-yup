@@ -35,5 +35,6 @@ export const InputControl = ({
 const styles = StyleSheet.create({
   error: {
     color: "red",
+    fontSize: 12
   },
 });
