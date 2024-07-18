@@ -1,11 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { View } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import { Button } from "../Button";
 import { InputControl } from "../InputControl";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+
+const logo = require("../../assets/logo.png")
 
 type FormData = {
   name: string;
@@ -43,7 +45,8 @@ export default function FormRegister() {
     console.log(data);
   }
   return (
-    <View>
+    <View style={styles.container}>
+      <Image source={logo} style={styles.logo}/>
       <InputControl
         autoCorrect={false}
         autoCapitalize="none"
@@ -86,3 +89,13 @@ export default function FormRegister() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center'
+  },
+  logo: {
+    height: 75,
+    width: 75
+  }
+})
