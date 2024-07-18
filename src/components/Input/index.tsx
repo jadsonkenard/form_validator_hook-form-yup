@@ -1,22 +1,19 @@
-import { TextInput, TextInputProps, StyleSheet } from "react-native"
+import { TextInput, TextInputProps, StyleSheet } from "react-native";
 
-export type IInput = TextInputProps & {
-    // value?: string;
-}
+export type IInput = TextInputProps & {};
 
-export const Input = ({value, ...props}: IInput) => {
-    return(
-        <>
-        <TextInput style={styles.input} {...props}/>
-        </>
-    )
-}
+export const Input = ({ ...props }: IInput) => {
+  return <TextInput style={styles.input} {...props} />;
+};
 
 const styles = StyleSheet.create({
-    input: {
-        borderWidth: 1,
-        width: 300,
-        height: 45,
-        marginVertical: 6
-    }
-})
+  input: {
+    width: 300,
+    height: 45,
+    backgroundColor: "#e2e8f0",
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    fontSize: 16,
+    fontWeight: '600'
+  },
+});

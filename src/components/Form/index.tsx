@@ -21,12 +21,12 @@ const schema = yup.object({
     .required("Email é obrigatório"),
   password: yup
     .string()
-    .min(8, "A senha deve ter pelo menos 8 caracteres")
-    .required("A senha é obrigatória"),
+    .required("A senha é obrigatória")
+    .min(3, "A senha deve ter pelo menos 3 caracteres"),
   confirm_password: yup
     .string()
     .required("Confirmar senha é obrigatório")
-    .oneOf([yup.ref("password")], "A senha deve ser igual a senha anterior"),
+    .oneOf([yup.ref("password")], "Senhas não conferem")
 });
 
 export default function FormRegister() {
@@ -43,10 +43,26 @@ export default function FormRegister() {
   }
   return (
     <View>
-      <InputControl name="name" control={control} error={errors.name} />
-      <InputControl name="email" control={control} error={errors.email} />
-      <InputControl name="password" control={control} error={errors.password} />
       <InputControl
+        label="Nome*"
+        name="name"
+        control={control}
+        error={errors.name}
+      />
+      <InputControl
+        label="Email*"
+        name="email"
+        control={control}
+        error={errors.email}
+      />
+      <InputControl
+        label="Senha*"
+        name="password"
+        control={control}
+        error={errors.password}
+      />
+      <InputControl
+        label="Confirmação de senha*"
         name="confirm_password"
         control={control}
         error={errors.confirm_password}
@@ -56,4 +72,3 @@ export default function FormRegister() {
     </View>
   );
 }
-
