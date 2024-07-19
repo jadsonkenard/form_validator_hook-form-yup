@@ -6,8 +6,8 @@ import { InputControl } from "../InputControl";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import logo from "../../assets/logo.png";
 
-const logo = require("../../assets/logo.png")
 
 type FormData = {
   name: string;
