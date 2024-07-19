@@ -42,7 +42,7 @@ export default function FormRegister() {
   });
 
   function handleForm(data: FormData) {
-    console.log(data);
+    console.log(data); //SAÍDA API...
   }
   return (
     <View style={styles.container}>
